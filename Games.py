@@ -143,6 +143,7 @@ def set_level ():
 
 
 
+
 def check_answer (guess, answer,turns):
 	if guess < answer:
 		print ("Too low")
