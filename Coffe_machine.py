@@ -1,5 +1,7 @@
     
 
+# start with
+
 
 order_coffee = input("What would you like: \n E for Expresso, L for latte and C for Cappuccino:\n")
 
@@ -36,27 +38,42 @@ def money():
         cal(a)
 money()
 
+#Recipe{Type,water,coffee,milk,price}
+Menu1 ={"EXPRESSO":{"Water":50,"Coffee":18,"Milk":0,"price":1.50},
+"LATTE":{"Water":200,"Coffee":24,"Milk":150,"price":2.50},
+"CAPPUCCINO":{"Water":250,"Coffee":24,"Milk":100,"price":3.00}}
 
-#cal(Custmer_give)
+CM_Fill ={"Water": 300,"Coffee": 100,"Milk": 200}
 
-
-
-
-
-# #Recipe{Type,water,coffee,milk,price}
-# Menu1 ={"E":{"water":"50","coffee":"18","milk":"0","price":"1.50"},
-# "L":{"water":"200","coffee":"24","milk":"150","price":"2.50"},
-# "C":{"water":"250","coffee":"24","milk":"100","price":"3.00"}}
-
-# def order(ELC):
+# def report():
 #     for key, value in Menu1.items():
-#         if key == ELC:
-#             print(key, ' : ',value)
-# order(Req_coffee)
-# print(order(Req_coffee))
+#         if key == orders:
+#             x=value
+#             x.update({"Water":(CM_Fill.get("Water")-50),"Coffee":(CM_Fill.get("Coffee")-18),"Milk":(CM_Fill.get("Milk")-0)})
+#     for key1, value1 in x.items():
+#         print(key1,":",value1)
 
-# # start with
-# CM_Fill ={"water": 300,"Milk": 200,"Coffee": 100}
+# report()
+
+def report():
+    for key, value in Menu1.items():
+        if key == orders:
+            x=value
+            x.update({"Water":(CM_Fill.get("Water")-x.get("Water"))
+                    ,"Coffee":(CM_Fill.get("Coffee")-x.get("Coffee"))
+                    ,"Milk":(CM_Fill.get("Milk")-x.get("Milk"))})
+            [print(key,":",value) for key, value in x.items()]
+report()
+
+
+
+
+
+
+
+
+
+
 
 # def Make_coffee(order):
 #     print("Turn On the Machine")
