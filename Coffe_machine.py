@@ -1,5 +1,5 @@
 
-Req_coffee = input("Please enter\n E for Expresso, L for latte and C for Cappuccino:\n")
+Req_coffee = input("Please place your order: \n E for Expresso, L for latte and C for Cappuccino:\n")
 # CM_off = input("Please enter ON and OFF operation of the coffee Machine")
 
 # amount in CM
@@ -8,7 +8,7 @@ def Money_calculation():
     Dimes   =int(input("please enter number of Dimes"))
     Nickles =int(input("please enter number of Nickles"))
     Pennies =int(input("please enter number of Pennies"))
-    Total_money = float((0.25*Quaters)+(0.1*Dimes)+(0.05*Nickles)+(0.01*Pennies))
+    Total_money = round(float((0.25*Quaters)+(0.1*Dimes)+(0.05*Nickles)+(0.01*Pennies)),2)
     print(Total_money)
 
 Money_calculation()
