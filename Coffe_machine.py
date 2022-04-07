@@ -5,23 +5,19 @@ order_coffee = input("What would you like: \n E for Expresso, L for latte and C 
 
 def order(a):
     if a =="E":
-        return("Expresso")
+        return ["EXPRESSO","1.50"]
     elif a =="L":
-        return("latte")
+        return ["LATTE","2.50"]
     elif a =="C":
-        return("Cappuccino")
+        return ["CAPPUCCINO","3.00"]
 
-def cost():
-    if order(order_coffee) =="Expresso":
-        return("1.50")
-    elif order(order_coffee) =="latte":
-        return("2.50")
-    elif order(order_coffee) =="Cappuccino":
-        return("3.00")
+orders = order(order_coffee)[0]
+cost  = order(order_coffee)[1]
 
-print(f"You ordered {order(order_coffee)} and it cost $ "+ cost())
+print(f"You ordered {orders} and it cost $ "+ cost)
 
 Custmer_give = float(input("Here you go: \n"))
+
 def cal(money):
     Q = int(money / 0.25)
     D = int((money-(Q*0.25))/0.10)
@@ -31,12 +27,12 @@ def cal(money):
 
 def money():
     
-    if float(cost()) <= Custmer_give:
-        print("return $"+str(round(Custmer_give -float(cost()),2)))
-        a=Custmer_give -float(cost())
+    if float(cost) <= Custmer_give:
+        print("return $"+str(round(Custmer_give -float(cost),2)))
+        a=Custmer_give -float(cost)
         cal(a)
     else:
-        print("Ask for $"+str(round(Custmer_give -float(cost()),2)))
+        print("Ask for $"+str(round(Custmer_give -float(cost),2)))
         cal(a)
 money()
 
